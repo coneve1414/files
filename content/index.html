@@ -1,0 +1,18 @@
+---
+title: Download
+---
+
+<h2>Recommended downloads for the MinePass project</h2>
+
+These downloads are for <strong>world and server owners</strong>;
+<br /> Players will find everything they need at
+<a href="https://portal.minepass.net" target="_blank">portal.minepass.net</a>
+
+<% grouped_downloads.each do |group,items| %>
+<h3><%= group %></h3>
+  <% items.each do |item| %>
+  <a href="<%= item[:s3_uri] %>"><i class="fa fa-download"></i> <%= item[:basename] %></a>
+  <br />
+  <% end %>
+<% end %>
+

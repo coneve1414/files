@@ -1,0 +1,13 @@
+language: ruby
+rvm: 2.2
+bundler_args: "--without development test"
+script: bundle exec nanoc
+deploy:
+  provider: s3
+  access_key_id: AKIAJV4IZMBHN7USQBEQ
+  secret_access_key:
+    secure: mKS2rkTvX775+FlHxymibBaaQMWokiFI7uYOG0RaPxmDFdv7M0PtpOvlfiKSHiA+czfnS18/ydDb+hqU4NUjtCi2ssDmJTPo3fL3umEkPKF0kWp0qKqGLTGGRvBnAVR/zE1IrHtzxB7u/5pKFyYPggqxbwZ0Lh+rWv3o/T86usUSjwxa2z/9nJNMlnbW0bhX4TYPwoOWYG+K17qYCq+6Z0G0JWKv1sS3HRFRCy7qbcr9UCACHcNfy4NRpVnoYGotW/Mvfjc0h9Qt0uXBKu8oNEfoE1fsmpcHve81K5wyd2B8LzBMy7+AX+tByJdu8cRXcuhgAwJSPSIUDvmdOjSaCG1ipK24r9+XACjzUo3xMvjyN3cmtQsJ3P886IDc8/BqvcmNctHZk6GUaspmfEO9aECECPY+zk9SSKSj4H2TOmEuK2YEwS7auVgTyBZeZ6pSWUiofP1kkifU2AFJrTY2KUUl0qdW8UvhuszosVlq4RzWPyLdz9BDiWVvV0wNNqSVmlcIiNPDkBajiy02pzjU9+v9rNFndyVhxz2Fe4oLYR8XT2W8smPTU5DX3AtIVB9v7gmjS6NZLHL7FS7DaFDAdH6l4FWD5m1xipMjPUo0a/fDXW7tl4YHH6ICK3BkFEyRbW5T8ZDDEu1QDBga9i4evEmDXRoSsZmEfnzRAMCxAqY=
+  bucket: files.minepass.net
+  local-dir: output
+  skip_cleanup: true
+  acl: public_read
